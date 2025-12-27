@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan & SOP - The Icon Blast By Huda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ffd700; /* Gold */
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --success: #10b981;
+            --danger: #ef4444;
+            --info: #3b82f6;
+            --warning: #f59e0b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        /* HERO SECTION */
+        header {
+            text-align: center;
+            padding: 140px 20px 80px;
+            background: radial-gradient(circle at 50% 20%, #2e2a63 0%, var(--bg-dark) 70%);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        .subtitle { color: var(--text-muted); max-width: 600px; margin: 0 auto; font-size: 1.1rem; }
+        
+        .btn-cta {
+            display: inline-block;
+            margin-top: 35px;
+            background: var(--primary);
+            color: #000;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(255, 215, 0, 0.5); }
+
+        /* CONTAINER */
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+
+        section { margin-bottom: 80px; scroll-margin-top: 100px; }
+        
+        h2 { 
+            border-left: 5px solid var(--primary); 
+            padding-left: 15px; 
+            margin-bottom: 30px; 
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        /* CARDS */
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+
+        .card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+
+        .step-number {
+            background: var(--primary);
+            color: #000;
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* LOG VISUALIZATION */
+        .log-guide {
+            background: #000;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: monospace;
+            border: 1px solid #333;
+        }
+        .log-item { display: flex; gap: 15px; margin-bottom: 10px; align-items: flex-start; }
+        .log-text { color: #0f0; }
+        .log-desc { color: #888; font-size: 0.9rem; font-family: 'Inter', sans-serif; }
+
+        /* TABLE */
+        .table-responsive { overflow-x: auto; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        table { width: 100%; border-collapse: collapse; background: var(--bg-card); }
+        th, td { padding: 20px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        th { background: rgba(0,0,0,0.3); color: var(--primary); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: rgba(255,255,255,0.02); }
+
+        /* ALERT BOXES */
+        .alert {
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .alert-danger { background: rgba(239, 68, 68, 0.1); border: 1px solid var(--danger); color: #fca5a5; }
+        .alert-info { background: rgba(59, 130, 246, 0.1); border: 1px solid var(--info); color: #93c5fd; }
+        .alert-warning { background: rgba(245, 158, 11, 0.1); border: 1px solid var(--warning); color: #fcd34d; }
+
+        /* FAQ ACCORDION */
+        .accordion { background: var(--bg-card); border-radius: 10px; overflow: hidden; margin-bottom: 10px; border: 1px solid rgba(255,255,255,0.05); }
+        .accordion-header {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .accordion-header:hover { background: rgba(255,255,255,0.02); color: var(--primary); }
+        .accordion-body {
+            padding: 0 20px 20px;
+            display: none;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 15px;
+            line-height: 1.7;
+        }
+        .accordion.active .accordion-body { display: block; }
+        .accordion.active .fa-chevron-down { transform: rotate(180deg); }
+
+        /* FOOTER */
+        footer { text-align: center; padding: 60px 20px; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 80px; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .nav-links { display: none; }
+            .card-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo"><i class="fab fa-whatsapp fa-lg"></i> Icon Blast</div>
+        <div class="nav-links">
+            <a href="#persiapan">Database</a>
+            <a href="#tutorial">Cara Pakai</a>
+            <a href="#logs">Kamus Log</a>
+            <a href="#sop">SOP Aman</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header>
+        <h1>Panduan & SOP 2.0</h1>
+        <p class="subtitle">Manual Book Resmi Tim Sales The Icon Acropolis. Pelajari cara menggunakan tools dengan aman, efektif, dan profesional.</p>
+        <a href="https://blastby.huda-automation.online/" target="_blank" class="btn-cta"><i class="fas fa-rocket"></i> Buka Dashboard</a>
+    </header>
+
+    <div class="container">
+
+        <!-- 1. PERSIAPAN -->
+        <section id="persiapan">
+            <h2>1. Persiapan Database (Google Sheets)</h2>
+            <p style="margin-bottom: 25px; color: var(--text-muted);">Fondasi utama blast ada di kerapian data Anda. Jangan salah input!</p>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="step-number">1</div>
+                    <h3><i class="fas fa-file-excel"></i> Nama Tab (Sheet)</h3>
+                    <p style="color: var(--text-muted); margin-top: 15px;">
+                        Wajib sama persis dengan ID di sistem (huruf kecil):<br>
+                        <code style="background:rgba(255,255,255,0.1); padding:2px 5px; border-radius:4px;">sales_nadia</code>
+                        <code style="background:rgba(255,255,255,0.1); padding:2px 5px; border-radius:4px;">sales_irvan</code>
+                        <code style="background:rgba(255,255,255,0.1); padding:2px 5px; border-radius:4px;">sales_huda</code>
+                        <code style="background:rgba(255,255,255,0.1); padding:2px 5px; border-radius:4px;">sales_ozi</code>
+                        <code style="background:rgba(255,255,255,0.1); padding:2px 5px; border-radius:4px;">sales_indah</code>
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="step-number">2</div>
+                    <h3><i class="fas fa-table"></i> Urutan Kolom</h3>
+                    <ul style="list-style: none; margin-top: 15px; color: var(--text-muted);">
+                        <li style="margin-bottom: 10px;"><strong style="color:var(--text-main)">Kolom A:</strong> Nama Customer (Contoh: Budi Santoso)</li>
+                        <li style="margin-bottom: 10px;"><strong style="color:var(--text-main)">Kolom B:</strong> Nomor HP (0812... / 62812...)</li>
+                        <li><strong style="color:var(--text-main)">Kolom C:</strong> Status (Isi 'pending' atau kosong)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. CARA PAKAI -->
+        <section id="tutorial">
+            <h2>2. Cara Menggunakan</h2>
+            
+            <div class="card" style="margin-bottom: 25px;">
+                <h3 style="color: var(--primary); margin-bottom: 20px;"><i class="fas fa-link"></i> Tahap 1: Login & Koneksi</h3>
+                <div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <p style="margin-bottom: 10px;">1. Buka Dashboard & Pilih Nama Anda.</p>
+                        <p style="margin-bottom: 10px;">2. Lihat tampilan layar:</p>
+                        <ul style="margin-left: 20px; color: var(--text-muted);">
+                            <li>Jika <b>Kotak Input HP Muncul</b>: Artinya belum connect. Masukkan nomor WA > Klik "Dapatkan Kode" > Masukkan kode di HP.</li>
+                            <li>Jika <b>Kotak Input HP Hilang</b>: Artinya WA sudah connect & siap pakai.</li>
+                        </ul>
+                    </div>
+                    <div style="flex: 1; background: #000; padding: 15px; border-radius: 10px; border: 1px solid #333;">
+                        <p style="font-size: 0.8rem; color: #888; margin-bottom: 5px;">ILUSTRASI DI HP:</p>
+                        <p style="color: #fff;">Titik 3 > Perangkat Tertaut > <b>tautkan perangkat > tautkan dengan nomor telepon saja</b></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 style="color: var(--success); margin-bottom: 20px;"><i class="fas fa-play-circle"></i> Tahap 2: Eksekusi Blast</h3>
+                <p>1. Klik tombol hijau <b>START BLAST</b>.</p>
+                <p>2. Jangan tutup tab browser (Boleh diminimize).</p>
+                <p>3. Pantau Log Terminal di bawah layar untuk memastikan proses berjalan.</p>
+            </div>
+        </section>
+
+        <!-- 3. MEMBACA LOG -->
+        <section id="logs">
+            <h2>3. Kamus Log (Cara Baca Terminal)</h2>
+            <p style="margin-bottom: 20px; color: var(--text-muted);">Jangan bingung melihat teks bergerak. Ini artinya:</p>
+
+            <div class="log-guide">
+                <div class="log-item">
+                    <span class="log-text">🚀 Ditemukan 5 kontak pending...</span>
+                    <span class="log-desc">→ Bot menemukan 5 data siap kirim di Excel.</span>
+                </div>
+                <div class="log-item">
+                    <span class="log-text">⌨️ [1] Budi: Mengetik...</span>
+                    <span class="log-desc">→ Bot sedang pura-pura mengetik (Aman).</span>
+                </div>
+                <div class="log-item">
+                    <span class="log-text">✅ [1] Budi: TERKIRIM.</span>
+                    <span class="log-desc">→ Sukses! Status di Excel otomatis berubah jadi 'sent'.</span>
+                </div>
+                <div class="log-item">
+                    <span class="log-text" style="color: #ff4444;">❌ [2] Siti: Tidak ada WA.</span>
+                    <span class="log-desc">→ Nomor hangus/tidak terdaftar WA. Status jadi 'failed'.</span>
+                </div>
+                <div class="log-item">
+                    <span class="log-text" style="color: #ffd700;">⏳ Menunggu 89 detik...</span>
+                    <span class="log-desc">→ <b>PENTING!</b> Bot sedang istirahat agar tidak diblokir WA. Jangan dicancel.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SOP -->
+        <section id="sop">
+            <h2>4. SOP Anti-Banned & Profiling</h2>
+            
+            <!-- Tabel Limit -->
+            <h3 style="margin-bottom: 15px; font-size: 1.2rem; color: var(--text-main);">🚦 Aturan Limit Harian</h3>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Status Nomor</th>
+                            <th>Maksimal Blast</th>
+                            <th>Jeda Aman</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color: var(--danger); font-weight: bold;">Nomor Baru (< 2 Minggu)</td>
+                            <td>50 pesan / hari</td>
+                            <td>3 - 5 Menit</td>
+                            <td><span style="background: rgba(239, 68, 68, 0.2); color: #fca5a5; padding: 3px 8px; border-radius: 4px; font-size: 0.8rem;">RISIKO TINGGI</span></td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--success); font-weight: bold;">Nomor Lama (> 1 Bulan)</td>
+                            <td>150 - 200 pesan / hari</td>
+                            <td>1 - 3 Menit</td>
+                            <td><span style="background: rgba(16, 185, 129, 0.2); color: #6ee7b7; padding: 3px 8px; border-radius: 4px; font-size: 0.8rem;">AMAN</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tips Profil -->
+            <div class="card-grid" style="margin-top: 30px;">
+                <div class="card" style="border-top: 4px solid var(--info);">
+                    <h3 style="color: var(--info); margin-bottom: 10px;"><i class="fas fa-user-tie"></i> Profil Terpercaya</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">
+                        Agar orang tidak menekan tombol 'Report/Block':<br>
+                        1. <b>Foto Profil:</b> Wajib foto diri rapi pakai seragam / Logo The Icon.<br>
+                        2. <b>Bio/Info:</b> "Marketing Executive The Icon Connect".<br>
+                        3. <b>Salam:</b> Sistem sudah pakai spintax (Pagi/Siang) otomatis.
+                    </p>
+                </div>
+                <div class="card" style="border-top: 4px solid var(--warning);">
+                    <h3 style="color: var(--warning); margin-bottom: 10px;"><i class="fas fa-comments"></i> Handling Balasan</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">
+                        WhatsApp suka interaksi 2 arah.<br>
+                        1. Jika ada balasan, <b>SEGERA BALAS MANUAL</b> lewat HP.<br>
+                        2. Langsung <b>SAVE KONTAK</b> mereka.<br>
+                        3. Jangan berdebat jika mereka menolak (Cukup ucapkan terima kasih).
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 5. FAQ -->
+        <section id="faq">
+            <h2>FAQ / Bantuan</h2>
+
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span><i class="fas fa-question-circle" style="margin-right: 10px;"></i> Web loading terus / Error 502?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    Server mungkin sedang restart otomatis. Tunggu 1-2 menit, lalu Refresh halaman. Jika masih error lebih dari 10 menit, hubungi Admin IT.
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span><i class="fas fa-mobile-alt" style="margin-right: 10px;"></i> Kode Pairing tidak muncul di layar?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    Biasanya karena koneksi internet di HP tidak stabil saat meminta request ke server WhatsApp. Refresh halaman web, matikan Wifi HP (pakai data), lalu coba lagi.
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span><i class="fas fa-check-double" style="margin-right: 10px;"></i> Di Log "Sukses" tapi di HP gak ada chat?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body">
+                    Ini wajar. Sinkronisasi HP kadang delay (chat baru muncul 5 menit kemudian). Patokan utama adalah <b>Google Sheet</b>. Jika di Sheet statusnya sudah 'sent', berarti pesan sudah aman terkirim ke server WA.
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Huda Automation Team. All Rights Reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.6;">System Version 2.0 • The Icon Connect</p>
+    </footer>
+
+    <script>
+        const accordions = document.querySelectorAll('.accordion');
+        accordions.forEach(acc => {
+            acc.querySelector('.accordion-header').addEventListener('click', () => {
+                const isActive = acc.classList.contains('active');
+                // Tutup semua yang lain (opsional, biar rapi)
+                accordions.forEach(a => a.classList.remove('active'));
+                // Toggle yang diklik
+                if (!isActive) acc.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
