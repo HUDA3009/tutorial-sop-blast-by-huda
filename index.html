@@ -208,38 +208,6 @@
 </head>
 <body>
 
-    <script>
-(function () {
-    const PASSWORD = "iconblast2025"; // ganti password di sini
-
-    // cek session
-    if (sessionStorage.getItem("sop_auth") !== "true") {
-        const input = prompt("Masukkan Password Akses SOP:");
-        if (input === PASSWORD) {
-            sessionStorage.setItem("sop_auth", "true");
-        } else {
-            document.body.innerHTML = `
-                <div style="
-                    background:#0f172a;
-                    color:#fff;
-                    height:100vh;
-                    display:flex;
-                    align-items:center;
-                    justify-content:center;
-                    font-family:Inter,sans-serif;
-                    text-align:center;
-                ">
-                    <div>
-                        <h2 style="color:#ef4444;">Akses Ditolak</h2>
-                        <p>Password salah atau tidak diizinkan.</p>
-                    </div>
-                </div>
-            `;
-        }
-    }
-})();
-</script>
-
 
     <!-- NAVBAR -->
     <nav>
